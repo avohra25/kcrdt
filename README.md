@@ -3,8 +3,8 @@
 Conflict-free replicated data types (CRDTs) for Kotlin/JVM, with no runtime
 dependencies beyond the Kotlin standard library.
 
-> Work in progress: a collaborative-text sequence CRDT and a convergence
-> simulator are coming next.
+> Work in progress: a seeded network simulator, convergence fuzzing and a
+> demo CLI are coming next.
 
 ## What's here so far
 
@@ -19,6 +19,7 @@ dependencies beyond the Kotlin standard library.
 | `DotContext` | causal context | version vector + dot cloud, auto-compacted |
 | `OrSet` | state CRDT | add-wins observed-remove set, no per-element tombstones |
 | `LwwMap` | state CRDT | per-key LWW registers with timestamped tombstones |
+| `Rga` | op-based CRDT | replicated growable array for collaborative text; causal buffering, idempotent delivery |
 
 Every state CRDT implements `StateCrdt<T>.merge`, and the test suite checks the
 join-semilattice laws (commutative, associative, idempotent) over hundreds of
